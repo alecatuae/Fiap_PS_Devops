@@ -1,7 +1,7 @@
 ﻿az upgrade
 
 echo ">>> LOGIN NO AZURE"
-az login -u <user> -p <password>
+az login -u "<user>" -p "<password>"
 
 echo ">>> TERRAFORM PLAN"
 .\terraform.exe plan > plan.log
