@@ -10,7 +10,7 @@
 
 ### Terraform ###
 terraform.exe
-
+*.log
 # Local .terraform directories
 **/.terraform/*
 
