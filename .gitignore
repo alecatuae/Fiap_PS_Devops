@@ -9,6 +9,8 @@
 *.dll
 
 ### Terraform ###
+terraform.exe
+
 # Local .terraform directories
 **/.terraform/*
 
