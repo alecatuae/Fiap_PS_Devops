@@ -1,0 +1,1 @@
+CREATE TABLE `herodb`.`capas` ( `id` INT NOT NULL AUTO_INCREMENT, `idade` INT(8) NOT NULL, `cor_pele` VARCHAR(15) NOT NULL, `sexo` VARCHAR(15) NOT NULL, `altura` INT(8) NOT NULL, `peso` INT(8) NOT NULL, `cor_cabelo` VARCHAR(15) NOT NULL, `tipo_cabelo` VARCHAR(15) NOT NULL, `foto_rosto` LONGBLOB NOT NULL, PRIMARY KEY (`id`) );

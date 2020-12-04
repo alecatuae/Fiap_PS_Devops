@@ -128,6 +128,7 @@ resource "azurerm_virtual_machine" "vm" {
     }
     provisioner "remote-exec" {
         inline = [
+          "sudo timedatectl set-timezone America/Sao_Paulo",
           "sudo apt update",
           "sudo apt upgrade -y",
           "sudo apt install mysql-server -y",
@@ -139,7 +140,10 @@ resource "azurerm_virtual_machine" "vm" {
           "wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -",
           "echo 'deb https://packages.grafana.com/oss/deb stable main' | sudo tee -a /etc/apt/sources.list.d/grafana.list",
           "sudo apt-get update",
-          "sudo apt-get install grafana"
+          "sudo apt-get install -y grafana",
+          "sudo systemctl enable grafana-server",
+          "sudo systemctl start grafana-server",
+          "sudo mysql -e 'SET PASSWORD FOR root@localhost = PASSWORD('1234');FLUSH PRIVILEGES;'"
         ]
         connection {
           type      = "ssh"
